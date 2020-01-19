@@ -4,13 +4,9 @@ node{
     }
      stage('Compile-Package'){
      // GET MAVEN HOME package
-          def mvn_version = 'M3'
-withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
-  //sh "mvn clean package"
-
      def mvnHOME = tool name: '', type: 'maven'
      sh "${mvnHOME}/bin/mvn package"          
+    }
    }
-  }
      
-}
+
